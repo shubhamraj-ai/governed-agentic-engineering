@@ -1,109 +1,121 @@
 # Governed Agentic Engineering
 
-A sanitized technical showcase of an in-development supervisory agentic system intended to automate low-risk software-engineering workflows while preserving deterministic controls, auditability, and explicit human approval for consequential actions.
+A public-safe architecture and implementation showcase for a supervisory agentic system designed to automate low-risk software-engineering work while preserving deterministic policy controls, auditability, and explicit human authority over consequential actions.
 
-> **Status:** Architecture complete enough for implementation preparation; staged implementation is beginning. This repository does not claim a fully deployed autonomous engineering system.
+> **Current status:** architecture and implementation preparation are established; staged implementation is beginning. This repository intentionally does not claim a fully deployed autonomous engineering platform.
 
-## What this project demonstrates
+## At a glance
 
-- Agentic system architecture
-- Specialist-agent orchestration
-- Deterministic policy and approval boundaries
-- Human-in-the-loop governance
-- Risk-based action classification
-- Tool-gateway design
-- Auditability and evidence-driven workflow state
-- Cost controls and bounded automation
-- Separation between reasoning, authorization, and execution
+| Area | Design direction |
+| --- | --- |
+| Orchestration | Event-driven supervisory manager with specialist-agent capabilities |
+| Governance | Deterministic policy and approval engines constrain AI-proposed actions |
+| Execution | Tool gateways execute only actions that pass authority and policy checks |
+| Risk | Actions are classified from observational/low-risk through consequential/high-impact |
+| Evidence | Workflow state changes are tied to explicit validation and audit evidence |
+| Human control | Production deployment, secrets, migrations, destructive actions, and other consequential operations require approval |
+| Reliability | Cost controls, idempotency, locks, recovery logic, and kill switches are part of the design |
 
-## Core operating principle
+## What I am building
+
+The project explores a practical alternative to unrestricted software agents. Instead of giving an AI model broad authority, the system separates **reasoning, authorization, execution, and evidence**.
 
 ```text
-AI agents reason and propose
+AI specialist proposes work
         |
         v
-Deterministic services evaluate policy / authority
+Deterministic policy / authority evaluation
         |
         v
-Tool gateways execute only authorized actions
+Approved tool gateway execution
         |
         v
-Evidence updates workflow state
+Independent review + validation evidence
         |
         v
-Human approval remains mandatory at consequential boundaries
+Workflow state transition
+        |
+        +----> human approval whenever the boundary is consequential
 ```
 
-## High-level architecture
+## What this demonstrates
 
-The planned system uses a supervisory manager with deterministic shared services and a specialist-agent pool.
+- agentic system architecture
+- specialist-agent orchestration
+- deterministic policy and approval boundaries
+- human-in-the-loop governance
+- risk-based action classification
+- tool-gateway and least-authority design
+- workflow state machines
+- independent review / QA separation
+- auditability and evidence-driven transitions
+- idempotency, locking, cost controls, and kill-switch thinking
+- progressive autonomy rather than unrestricted automation
 
-### Deterministic services
+## Specialist capabilities
 
-- workflow/state engine
-- policy engine
-- approval engine
-- cost controller
-- audit service
-- notification service
-- tool gateway
-- scheduler / next-work selector
-- lock and idempotency controls
+The planned system separates logical specialist roles such as:
 
-### Specialist capabilities
+- planning / product reasoning;
+- bounded development;
+- independent review;
+- QA / test interpretation;
+- release/deployment preparation;
+- maintenance and incident analysis;
+- support drafting;
+- feedback and product-intelligence analysis.
 
-- planning / product reasoning
-- development
-- independent review
-- QA / test interpretation
-- release / deployment preparation
-- maintenance / incident analysis
-- support drafting
-- feedback / product intelligence
+These specialists are invoked only when a bounded workflow needs them; they are not treated as permanently autonomous processes.
 
-Specialists are invoked only when a bounded workflow needs them; they are not treated as unrestricted autonomous processes.
+## Risk and authority model
 
-## Risk model
+The design uses progressively stronger controls as impact rises:
 
-The design distinguishes low-impact observation from higher-impact actions. Read-only inspection may be automatic, while consequential actions such as production deployment, secret changes, database migrations, permission changes, destructive operations, or material financial actions require explicit human approval.
+- **R0 — observational:** repository state, logs, health, documentation reads;
+- **R1 — low-risk / reversible:** bounded development branches, tests, routine documentation;
+- **R2 — meaningful / controlled:** larger changes, dependency work, release preparation;
+- **R3 — consequential:** production deployment, secrets, migrations, destructive operations, financial actions, major permission changes.
 
-## Implementation philosophy
+AI may propose risk, but deterministic policy can retain or raise it. Consequential actions remain human-controlled.
 
-The system is intended to earn autonomy progressively:
+## Implementation path
 
-1. local orchestration skeleton
-2. deterministic mocks
-3. communication / approval integration
-4. read-only external integrations
-5. shadow mode
-6. observational autonomy
-7. limited low-risk writes
-8. bounded development automation
-9. qualified low-risk merge automation
-10. human-gated production operations
+1. local orchestration and state model;
+2. deterministic mock integrations;
+3. approval/communication integration;
+4. read-only external integrations;
+5. shadow mode;
+6. observational autonomy;
+7. limited reversible writes;
+8. bounded development automation;
+9. qualified low-risk merge automation;
+10. human-gated production operations.
+
+## Public-safe workflow example
+
+See [`examples/workflow-state-example.md`](examples/workflow-state-example.md) for a fictional task showing how a work item can move from creation through risk assessment, authorization, execution, review, validation, and approval without exposing any private repository or production details.
 
 ## Repository scope
 
-This repository is a **public-facing architecture and engineering showcase**. It intentionally excludes:
+This repository is a **sanitized technical showcase**. It intentionally excludes:
 
-- private product names and internal project identifiers
-- production credentials and infrastructure secrets
-- exact private repository structure
-- customer or merchant data
-- internal authorization records
-- operational channel identifiers
-- sensitive deployment targets and environment values
+- private product names and private repository identifiers;
+- credentials, secrets, production endpoints, and operational channel IDs;
+- internal authorization records;
+- customer/merchant data;
+- exact production policies and deployment targets;
+- private infrastructure details that could broaden operational access.
 
-## Why this public version exists
+## Current limitations
 
-The goal is to demonstrate how agentic AI can be engineered as a governed software system rather than treated as unrestricted model autonomy.
+The architecture is significantly more mature than the current implementation. The public repository therefore distinguishes clearly between **designed**, **being implemented**, and **operationally qualified** capabilities rather than presenting planned autonomy as already deployed.
 
-## Next additions
+## Additional notes
 
-Planned public-safe additions include:
+- [`docs/risk-and-approval-model.md`](docs/risk-and-approval-model.md) — authority boundaries
+- [`docs/implementation-roadmap.md`](docs/implementation-roadmap.md) — staged rollout direction
+- [`docs/agent-contract-example.md`](docs/agent-contract-example.md) — public-safe specialist contract pattern
 
-- risk-model documentation
-- human-approval design
-- specialist-agent contract examples
-- state-machine examples
-- implementation notes as the private system progresses
+---
+
+**Why this repository exists:** to demonstrate how agentic AI can be engineered as a governed software system with explicit authority, evidence, and human control rather than unrestricted model autonomy.
