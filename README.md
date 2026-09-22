@@ -106,6 +106,12 @@ This repository is a **sanitized technical showcase**. It intentionally excludes
 - exact production policies and deployment targets;
 - private infrastructure details that could broaden operational access.
 
+## Private Project & Implementation Evidence
+
+This public repository is a selectively disclosed portfolio representation of a broader private development effort. The private project materials contain the fuller architecture, implementation planning, development evidence, underlying system documentation, and other records that are intentionally excluded here for IP, privacy, security, or operational reasons.
+
+**Additional private implementation evidence may be shared selectively during a relevant technical interview or professional review, subject to appropriate confidentiality and disclosure considerations.**
+
 ## Current limitations
 
 The architecture is significantly more mature than the current implementation. The public repository therefore distinguishes clearly between **designed**, **being implemented**, and **operationally qualified** capabilities rather than presenting planned autonomy as already deployed.
